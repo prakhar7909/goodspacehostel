@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GoodSpaceHostel</title>
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Reem+Kufi:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom Styles */
+        .text-tangy-orange {
+            color: #f97316; /* Tangy orange color */
+        }
+
+        .bg-tangy-orange {
+            background-color: #FF5733; /* Tangy orange background color */
+        }
+
+        .bg-light-gray {
+            background-color: #f3f4f6; /* Light gray background color */
+        }
+
+        .bg-dark-blue {
+            background-color: #1f2937; /* Dark blue background color */
+        }
+
+        /* Navigation Styles */
+        /* Main Navbar Styles */
+/* Base Styles */
+body {
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar Styles */
+.navbar {
+    background-color: #ffffff;
+    border-bottom: 2px solid #FF5733;
+    padding: 20px 20px; /* Increased padding for a taller navbar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 100px; /* Increased height for alignment */
+}
+
+/* Container to ensure proper alignment */
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* Logo and Site Name */
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.site-name {
+    font-size: 28px;
+    font-weight: 700;
+    color: #FF5733;
+}
+
+/* Center align navbar links */
+.navbar-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.navbar-links li {
+    margin: 0 15px;
+}
+
+.navbar-links .nav-link {
+    text-decoration: none;
+    color: #000000;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.navbar-links .nav-link:hover {
+    color: #FF5733;
+}
+
+/* Booking Button Styles */
+.booking-button {
+    background-color: #FF5733;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.booking-button:hover {
+    background-color: #e04e2b; /* Darker shade for hover effect */
+}
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    
+    cursor: pointer;
+    
+    font-size: 24px; /* Adjust size for better visibility */
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px; /* Padding for mobile view */
+}
+
+.mobile-navbar-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Center align the mobile links */
+}
+
+.mobile-navbar-links li {
+    margin: 20px 0;
+}
+
+.mobile-navbar-links .nav-link {
+    font-size: 24px;
+    color: #FF5733;
+}
+
+/* Close Button for Mobile Menu */
+.close-menu {
+    position: absolute;
+    top: 20px; /* Positioned at the top */
+    right: 20px; /* Positioned to the right */
+    cursor: pointer;
+    color: #FF5733; /* Orange color for close button */
+    font-size: 30px; /* Adjust size for better visibility */
+    z-index: 1001;
+}
+
+/* Mobile Cancel Button Styles */
+.cancel-button {
+    margin-top: 20px; /* Space between links and cancel button */
+    padding: 10px 20px;
+    border: 1px solid #FF5733;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #FF5733;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cancel-button:hover {
+    background-color: #FF5733;
+    color: #ffffff;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none; /* Hide desktop links on mobile */
+    }
+
+    .hamburger-menu {
+        display: inline; /* Show hamburger menu on mobile */
+    }
+
+    .booking-button {
+        display: none; /* Hide booking button on mobile */
+    }
+
+    .mobile-menu.active {
+        display: flex; /* Show mobile menu when active */
+    }
+}
+
+    .hero {
+    position: relative;
+    height: 500px; /* Adjust height as needed */
+    overflow: hidden;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1; /* Ensure slides are above any background elements */
+}
+
+.hero-slide.active {
+    opacity: 1;
+    z-index: 2; /* Ensure the active slide is above the inactive ones */
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image covers the container */
+    display: block; 
+    /* Removes any default inline spacing */
+}
+.hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Black overlay with 50% opacity */
+            z-index: 1; /* Ensure the overlay is above the image */
+        }
+
+.hero .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+    width: 100%;
+    max-width: 600px; /* Adjust max-width as needed */
+    padding: 0 20px;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 700;
+            font-size: 20px; /* Add padding to avoid text getting too close to edges */
+}
+
+.hero .hero-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero .hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.hero .hero-text a {
+    display: inline-block;
+    background-color: #f97316; /* Tangy orange color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: background-color 0.3s ease;
+}
+
+.hero .hero-text a:hover {
+    background-color: #e04b10; /* Darker shade of tangy orange */
+}
+
+.hero .dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.hero .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.8);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero .dot.active {
+    background-color: #f97316; /* Active dot color (tangy orange) */
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 300px; /* Adjust height for smaller screens */
+    }
+
+    .hero .hero-text h1 {
+        font-size: 2rem; /* Adjust font size */
+    }
+
+    .hero .hero-text p {
+        font-size: 1rem; /* Adjust font size */
+    }
+
+    .hero .hero-text a {
+        font-size: 1rem; /* Adjust font size */
+    }
+}
+
+
+@import url("https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap");
+
+.gallery-section {
+    background-color: white; /* White background */
+    padding: 40px 0;
+    text-align: center; /* Center align text */
+    --space: 2rem;
+
+display: grid;
+align-content: center;
+overflow: hidden;
+gap: var(--space);
+width: 100%;
+font-family: "Corben", system-ui, sans-serif;
+font-size: 1.5rem;
+line-height: 1;
+}
+
+.gallery-section h2 {
+    font-family: "Reem Kufi", sans-serif; /* Applied Reem Kufi font-family */
+    font-size: 32px; /* Font size for "Facilities" */
+    font-weight: 600; /* Font weight for "Facilities" */
+    color: #f97316; /* Orange color for "Facilities" */
+    margin-top:0;
+}
+
+.marquee {
+  --duration: 60s;
+  --gap: var(--space);
+
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: var(--gap);
+  transform: skewY(-3deg);
+}
+
+.marquee__group {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: var(--gap);
+  min-width: 100%;
+  animation: scroll var(--duration) linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee__group {
+    animation-play-state: paused;
+  }
+}
+
+.marquee__group img {
+  max-width: clamp(10rem, 1rem + 28vmin, 20rem);
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+.marquee__group p {
+  background-image: linear-gradient(
+    75deg,
+    hsl(240deg 70% 49%) 0%,
+    hsl(253deg 70% 49%) 11%,
+    hsl(267deg 70% 49%) 22%,
+    hsl(280deg 71% 48%) 33%,
+    hsl(293deg 71% 48%) 44%,
+    hsl(307deg 71% 48%) 56%,
+    hsl(320deg 71% 48%) 67%,
+    hsl(333deg 72% 48%) 78%,
+    hsl(347deg 72% 48%) 89%,
+    hsl(0deg 73% 47%) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.marquee--borders {
+  border-block: 3px solid dodgerblue;
+  padding-block: 0.75rem;
+}
+
+.marquee--reverse .marquee__group {
+  animation-direction: reverse;
+  animation-delay: calc(var(--duration) / -2);
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+.amenities-section {
+    background-color: white; /* White background */
+    padding: 40px 0;
+    text-align: center; /* Center align text */
+}
+
+.amenities-section .subheading {
+    font-family: "Reem Kufi", sans-serif; /* Applied Reem Kufi font-family */
+    font-size: 16px; /* Font size for "Why Us" */
+    font-weight: 400; /* Font weight for "Why Us" */
+    color: #666; /* Grey color for "Why Us" */
+    margin-bottom: 10px;
+}
+
+.amenities-section h2 {
+    font-family: "Reem Kufi", sans-serif; /* Applied Reem Kufi font-family */
+    font-size: 32px; /* Font size for "Facilities" */
+    font-weight: 600; /* Font weight for "Facilities" */
+    color: #f97316; /* Orange color for "Facilities" */
+    margin: 0;
+}
+
+.amenities {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Gap between items */
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center align horizontally */
+    padding: 20px;
+}
+
+.amenity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+}
+
+.amenity:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.amenity svg {
+    width: 60px; /* Adjust SVG size as needed */
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.amenity .facility-name {
+    font-family: "Roboto", sans-serif; /* Font-family for facility name */
+    font-size: 21px; /* Font size for facility name */
+    font-weight: 500; /* Font weight for facility name */
+    color: #f97316; /* Orange color for facility name */
+}
+
+.amenity p {
+    margin: 0;
+    color: #292929; /* Color for description */
+    font-family: "Reem Kufi", sans-serif; /* Font-family for description */
+    font-size: 16px; /* Font size for description */
+    font-weight: 400; /* Font weight for description */
+    text-align: center; /* Center align text */
+}
+
+@media (max-width: 768px) {
+    .amenities {
+        grid-template-columns: 1fr; /* Single column on smaller screens */
+    }
+}
+
+
+.rooms-section {
+    background-color: #f7f6ff; /* Light gray background */
+    padding: 40px 0;
+    text-align: center; /* Center align text */
+    width: 100%; /* Full width */
+    position: relative; /* For positioning the button */
+}
+
+.rooms-section .subheading {
+    font-family: "Reem Kufi", sans-serif; /* Applied Reem Kufi font-family */
+    font-size: 16px; /* Font size for "Why Us" */
+    font-weight: 400; /* Font weight for "Why Us" */
+    color: #666; /* Grey color for "Why Us" */
+    margin-bottom: 10px;
+}
+
+.rooms-section h2 {
+    font-family: "Reem Kufi", sans-serif; /* Applied Reem Kufi font-family */
+    font-size: 32px; /* Font size for "Facilities" */
+    font-weight: 600; /* Font weight for "Facilities" */
+    color: #f97316; /* Orange color for "Facilities" */
+    margin: 0;
+}
+
+.room-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Gap between cards */
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center align horizontally */
+    padding: 20px;
+    position: relative; /* For positioning the button */
+}
+
+.room-card {
+    position: relative;
+    width: 423px; /* Fixed width for card */
+    height: 280px; /* Fixed height for card */
+    overflow: hidden;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: transform 0.2s ease-in-out;
+}
+
+.room-card:hover {
+    transform: translateY(-5px); /* Lift on hover */
+}
+
+.room-card img {
+    width: 100%; /* Full width image */
+    height: 100%; /* Full height image */
+    object-fit: cover; /* Cover image */
+    display: block;
+}
+
+.room-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Black overlay with transparency */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.room-card .overlay .room-name {
+    font-family: "Roboto", sans-serif; /* Font-family for room name */
+    font-size: 23px; /* Font size for room name */
+    font-weight: 500; /* Font weight for room name */
+    margin: 0;
+}
+
+.room-card .overlay .description {
+    font-family: "Roboto", sans-serif; /* Font-family for description */
+    font-size: 16px; /* Font size for description */
+    font-weight: 400; /* Font weight for description */
+    margin: 0;
+}
+
+.check-availability {
+    font-family: "Reem Kufi", sans-serif; /* Font-family for availability text */
+    font-size: 18px; /* Font size for availability text */
+    font-weight: 400; /* Font weight for availability text */
+    color: #292929; /* Color for availability text */
+    margin: 20px 0; /* Margin for spacing */
+}
+
+
+
+@media (max-width: 768px) {
+    .room-cards {
+        flex-direction: column; /* Stack cards on smaller screens */
+        align-items: center; /* Center align vertically */
+    }
+
+    .room-card {
+        width: 100%; /* Full width cards on smaller screens */
+        max-width: 423px; /* Max width for cards */
+        height: auto; /* Auto height for cards */
+    }
+
+   
+}
+
+
+.contact-section {
+    background-color: #fff; /* White background */
+    padding: 40px 0;
+    text-align: center; /* Center align text */
+    width: 100%; /* Full width */
+}
+
+.contact-section h2 {
+    font-family: "Reem Kufi", sans-serif; /* Reem Kufi font-family */
+    font-size: 32px; /* Font size */
+    font-weight: 600; /* Font weight */
+    color: #f97316; /* Orange color */
+    margin: 0;
+}
+
+.contact-section .subheading {
+    font-family: "Reem Kufi", sans-serif; /* Reem Kufi font-family */
+    font-size: 16px; /* Font size */
+    font-weight: 400; /* Font weight */
+    color: #666; /* Grey color */
+    margin-bottom: 10px;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Gap between sections */
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center align horizontally */
+    padding: 20px;
+}
+
+.contact-subsection {
+    background-color: #000; /* Black background */
+    border-radius: 12px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+    color: #fff; /* White text color */
+    flex: 1; /* Take up equal space */
+    position: relative; /* Position relative for child elements */
+}
+
+.contact-subsection h3 {
+    font-size: 1.5rem;
+    color: #fff; /* White text color */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.contact-subsection p {
+    color: #ddd; /* Lighter gray text color */
+    line-height: 1.6;
+}
+
+.map-container {
+    height: 300px; /* Adjust height as needed */
+    border-radius: 12px; /* Rounded corners */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Position relative for child elements */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+.map-container iframe {
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    border: 0; /* Remove iframe border */
+    position: absolute; /* Position absolute to fill parent */
+    top: 0;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .contact-content {
+        flex-direction: column; /* Stack sections on smaller screens */
+        align-items: center; /* Center align vertically */
+    }
+
+    .contact-subsection {
+        width: 100%; /* Full width on smaller screens */
+        margin-bottom: 20px; /* Space between sections */
+    }
+
+    .map-container {
+        height: 200px; /* Adjusted height for smaller screens */
+    }
+}
+
+.testimonial-section {
+    background-color: #f7f6ff; /* Light gray background */
+    padding: 40px 0;
+    text-align: center; /* Center align text */
+    width: 100%; /* Full width */
+}
+
+.subheading {
+    font-family: "Reem Kufi", sans-serif; /* Applied Reem Kufi font-family */
+    font-size: 16px; /* Font size for "Check us out" */
+    font-weight: 400; /* Font weight for "Check us out" */
+    color: #666; /* Grey color for "Check us out" */
+    margin-bottom: 10px;
+}
+
+.testimonial-section h2 {
+    font-family: "Reem Kufi", sans-serif; /* Applied Reem Kufi font-family */
+    font-size: 32px; /* Font size for "Testimonials" */
+    font-weight: 600; /* Font weight for "Testimonials" */
+    color: #f97316; /* Orange color for "Testimonials" */
+    margin: 0;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Gap between testimonials */
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center align horizontally */
+    padding: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.testimonial-card {
+    background-color: #fff; /* White background */
+    border: 1px solid #f97316; /* Orange border */
+    border-radius: 5px; /* Slightly rounded corners */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    width: 300px; /* Fixed width for consistency */
+    height: 400px; /* Fixed height for consistency */
+    text-align: left; /* Left align text */
+    position: relative; /* Position relative for profile image */
+    overflow: hidden; /* Hide overflowing content */
+    display: flex;
+    flex-direction: column; /* Ensure that text grows with content */
+}
+
+.testimonial-card h3 {
+    font-size: 1.2rem; /* Adjusted font size for better fit */
+    color: #333; /* Dark gray text color */
+    margin-top: 0;
+    margin-bottom: 10px;
+    padding-top: 70px; /* Space for profile image */
+}
+
+.testimonial-card .rating {
+    color: #f97316; /* Orange text color for rating */
+    margin-bottom: 10px;
+}
+
+.testimonial-card p {
+    color: #666; /* Medium gray text color */
+    line-height: 1.6;
+    flex: 1; /* Allow text area to grow */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Show ellipsis when text overflows */
+    display: -webkit-box;
+    -webkit-line-clamp: 5; /* Limit text to 5 lines */
+    -webkit-box-orient: vertical; /* Vertical orientation for clamping */
+    margin-bottom: 0; /* Adjust margin as needed */
+}
+
+.testimonial-card .profile-image {
+    width: 60px; /* Smaller profile image width */
+    height: 60px; /* Smaller profile image height */
+    border-radius: 50%; /* Circular profile image */
+    object-fit: cover; /* Maintain aspect ratio */
+    position: absolute; /* Position absolute for overlay */
+    left: 20px; /* Adjust position as needed */
+    top: 20px; /* Adjust position to avoid covering text */
+    border: 2px solid #f97316; /* Orange border */
+}
+
+@media (max-width: 768px) {
+    .testimonial-container {
+        flex-direction: column; /* Stack testimonials on smaller screens */
+        align-items: center; /* Center align vertically */
+    }
+
+    .testimonial-card {
+        width: 100%; /* Full width on smaller screens */
+        max-width: 300px; /* Ensure card does not exceed max width */
+        margin-bottom: 20px; /* Space between testimonials */
+        height: auto; /* Remove fixed height on smaller screens */
+    }
+
+    .testimonial-card .profile-image {
+        top: 20px; /* Adjust position for smaller screens */
+        width: 50px; /* Reset profile image size */
+        height: 50px; /* Reset profile image size */
+    }
+}
+footer {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
+.footer-left, .footer-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center-align items in mobile view */
+}
+
+.footer-left {
+    margin-bottom: 20px; /* Space below for mobile */
+}
+
+.footer-right {
+    margin-top: 20px; /* Space above for mobile */
+}
+
+.footer-right ul li {
+    color: white; /* White color for Quick Links text */
+}
+
+.footer-right ul li svg {
+    color: white; /* White color for SVG icons */
+}
+
+.footer-right a {
+    color: white; /* White color for Quick Links text */
+    transition: color 0.3s; /* Smooth color transition */
+}
+
+.footer-right a:hover {
+    color: #d1d5db; /* Light gray color on hover */
+}
+
+
+
+    </style>
+</head>
+
+
+<body class="bg-gray-100">
+
+    <nav class="navbar" >
+        <div class="container">
+            <!-- Logo and Site Name -->
+            <div class="logo">
+                <img src="a1.png" alt="Logo" class="logo-img">
+                <span class="site-name">GoodSpaceHostel</span>
+            </div>
+    
+            <!-- Navigation Links -->
+            <ul class="navbar-links" id="navbar-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#amenities" class="nav-link">Amenities</a></li>
+                <li><a href="#rooms" class="nav-link">Rooms</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+    
+            <!-- Booking Button -->
+            <a href="#book" class="booking-button" id="booking-button">Book Now</a>
+    
+            <!-- Hamburger Menu for Mobile -->
+            <div class="hamburger-menu" id="hamburger-menu">
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3.46447 20.5355C4.92893 22 7.28595 22 12 22C16.714 22 19.0711 22 20.5355 20.5355C22 19.0711 22 16.714 22 12C22 7.28595 22 4.92893 20.5355 3.46447C19.0711 2 16.714 2 12 2C7.28595 2 4.92893 2 3.46447 3.46447C2 4.92893 2 7.28595 2 12C2 16.714 2 19.0711 3.46447 20.5355ZM18.75 16C18.75 16.4142 18.4142 16.75 18 16.75H6C5.58579 16.75 5.25 16.4142 5.25 16C5.25 15.5858 5.58579 15.25 6 15.25H18C18.4142 15.25 18.75 15.5858 18.75 16ZM18 12.75C18.4142 12.75 18.75 12.4142 18.75 12C18.75 11.5858 18.4142 11.25 18 11.25H6C5.58579 11.25 5.25 11.5858 5.25 12C5.25 12.4142 5.58579 12.75 6 12.75H18ZM18.75 8C18.75 8.41421 18.4142 8.75 18 8.75H6C5.58579 8.75 5.25 8.41421 5.25 8C5.25 7.58579 5.58579 7.25 6 7.25H18C18.4142 7.25 18.75 7.58579 18.75 8Z" fill="#e9a30c"></path> </g></svg>
+            </div>
+        </div>
+    
+        <!-- Mobile Menu Overlay -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="close-menu" id="close-menu">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+                    <path fill-rule="evenodd" d="M6 6L18 18M18 6L6 18" clip-rule="evenodd"/>
+                </svg>
+            </div>
+            <ul class="mobile-navbar-links">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#amenities" class="nav-link">Amenities</a></li>
+                <li><a href="#rooms" class="nav-link">Rooms</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <a href="#" class="cancel-button" id="cancel-button">Cancel</a>
+        </div>
+    </nav>
+    
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <!-- Slides with Text Overlay -->
+  <div class="hero-slide active">
+      <img src="swim.jpg" alt="Image 1">
+      <div class="hero-overlay"></div>
+      <div class="hero-text">
+          <h1>Good Space Hostel</h1>
+          <p>Best hostel near MUJ, offering the ultimate experience. Enjoy comfortable rooms, excellent facilities, and unforgettable memories.</p>
+          <a href="#book-now">Book Now</a>
+      </div>
+  </div>
+  <div class="hero-slide">
+      <img src="gsh2.jpg" alt="Image 2">
+      <div class="hero-overlay"></div>
+      <div class="hero-text">
+        <h1>Good Space Hostel</h1>
+        <p>Best hostel near MUJ, offering the ultimate experience. Enjoy comfortable rooms, excellent facilities, and unforgettable memories.</p>
+        <a href="#book-now">Book Now</a>
+    </div>
+  </div>
+  <div class="hero-slide">
+      <img src="gsh3.jpg" alt="Image 3">
+      <div class="hero-overlay"></div>
+      <div class="hero-text">
+        <h1>Good Space Hostel</h1>
+        <p>Best hostel near MUJ, offering the ultimate experience. Enjoy comfortable rooms, excellent facilities, and unforgettable memories.</p>
+        <a href="#book-now">Book Now</a>
+    </div>
+  </div>
+
+  <!-- Navigation Dots -->
+  <div class="dots">
+      <span class="dot active" onclick="currentSlide(0)"></span>
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+  </div>
+</section>
+<section class="amenities-section" id="amenities">
+    <div class="subheading">- Why Us -</div>
+    <h2>Facilities</h2>
+    <div class="amenities">
+        <div class="amenity">
+            <img src="wifi.svg" width="48" height="48" alt="Free WiFi">
+            <p class="facility-name">Free WiFi</p>
+            <p>Stay connected with high-speed internet throughout the premises.</p>
+        </div>
+        <div class="amenity">
+            <img src="washing.svg" width="48" height="48" alt="Free Laundry">
+            <p class="facility-name">Free Laundry</p>
+            <p>Enjoy complimentary laundry services to keep your clothes fresh.</p>
+        </div>
+        <div class="amenity">
+            <img src="meal.svg" width="48" height="48" alt="4 Time Meals">
+            <p class="facility-name">4 Time Meals</p>
+            <p>Enjoy four balanced meals a day, including breakfast, lunch, and dinner.</p>
+        </div>
+        <div class="amenity">
+            <img src="ac.svg" width="48" height="48" alt="AC Room">
+            <p class="facility-name">AC Room</p>
+            <p>Stay cool with air-conditioned rooms for your comfort.</p>
+        </div>
+        <div class="amenity">
+            <img src="playground.svg" width="48" height="48" alt="Playground">
+            <p class="facility-name">Playground</p>
+            <p>Enjoy recreational activities in our well-maintained playground.</p>
+        </div>
+        <div class="amenity">
+            <img src="sweep.svg" width="48" height="48" alt="Daily Housekeeping">
+            <p class="facility-name">Daily Housekeeping</p>
+            <p>Daily cleaning services to ensure a tidy and hygienic environment.</p>
+        </div>
+        <div class="amenity">
+            <img src="van.svg" width="48" height="48" alt="Daily Housekeeping">
+            <p class="facility-name">Pick Up and Drop </p>
+            <p>Pickup and Drop facility from hostel to college and vice versa.</p>
+        </div>
+        <div class="amenity">
+            <img src="swim.svg" width="48" height="48" alt="Daily Housekeeping">
+            <p class="facility-name">Swimming Pool</p>
+            <p>A Small size and well maintained swimming pool for student's enjoyment. </p>
+        </div>
+        
+    </div>
+    
+    </div>
+</section>
+
+
+
+<section class="rooms-section" id="room">
+    <div class="subheading">- Offering -</div>
+    <h2>Our Rooms</h2>
+    <div class="room-cards">
+        <!-- Single Room Card -->
+        <div class="room-card">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipMYATmNnnX5BsepQ29U23kPXAt2hanrnhw8vV0P=s1360-w1360-h1020" alt="Single Room">
+            <div class="overlay">
+                <p class="room-name">Single Room</p>
+                <p class="description">Perfect for solo travelers</p>
+            </div>
+        </div>
+
+        <!-- Double Room Card -->
+        <div class="room-card">
+            <img src="https://lh3.googleusercontent.com/p/AF1QipOa7etsqfvB76H8VTeHwhehTu2Nv0V95mljXJ64=s1360-w1360-h1020" alt="Double Room">
+            <div class="overlay">
+                <p class="room-name">Double Room</p>
+                <p class="description">Great for couples or small families</p>
+            </div>
+        </div>
+    </div>
+    <p class="check-availability">Call to check for availability for double occupancy & single occupancy</p>
+    
+</section>
+
+
+
+<section class="gallery-section" id="gallery">
+ <div class="subheading">- Check us out - </div>
+  <h2 class= "font-family: "Quicksand", sans-serif">Gallery</h2>
+  <div class="marquee">
+    <div class="marquee__group">
+      <img src='https://lh3.googleusercontent.com/p/AF1QipOa7etsqfvB76H8VTeHwhehTu2Nv0V95mljXJ64=s1360-w1360-h1020' alt=''>
+      <img src='https://lh3.googleusercontent.com/p/AF1QipO6DKmwdgmaN6TIyewf4mEA_E4jlL3Yv1aNhtSE=s1360-w1360-h1020' alt=''>
+      <img src='https://lh3.googleusercontent.com/p/AF1QipMARM4faOJ0J5z4h68aStz6UHYEg029lurFosTQ=s1360-w1360-h1020' alt=''>
+      <img src='https://lh3.googleusercontent.com/p/AF1QipOFVNyMDFhmi4abmCzO1Zl9YFiqOJi1MLIIBz1W=s1360-w1360-h1020' alt=''>
+      <img src='https://lh3.googleusercontent.com/p/AF1QipMYATmNnnX5BsepQ29U23kPXAt2hanrnhw8vV0P=s1360-w1360-h1020' alt=''>
+    </div>
+  
+    <div aria-hidden="true" class="marquee__group">
+      <img src='https://lh3.googleusercontent.com/p/AF1QipMz5X7R8ktJfepEodkPK1gF2Ax_Us26B7fbq99_=s1360-w1360-h1020' alt=''>
+      <img src='https://lh3.googleusercontent.com/p/AF1QipO88EoGn-TJ8vJxeFgYjLTdvUz9thnunrl3XLMi=s1360-w1360-h1020' alt=''>
+      <img src='https://lh3.googleusercontent.com/p/AF1QipOrcd4fLg01AkeKYfVHTKnT3UTyQmPXH78AOgdL=s1360-w1360-h1020' alt=''>
+      <img src='https://lh3.googleusercontent.com/p/AF1QipMWtCHPCqUswIl_BcfCZzDWGkH8mlrlZxGPDsE7=s1360-w1360-h1020' alt=''>
+      <img src='https://lh3.googleusercontent.com/p/AF1QipNPcxmt-sC3wKto_bsht8ZvGz_jvfC7LaYcKng8=s1360-w1360-h1020' alt=''>
+    </div>
+  </div>
+  
+  <div class="marquee marquee--borders" style="--duration: 100s">
+    <div class="marquee__group">
+      <p>GoodSpaceHostel</p>
+      <p aria-hidden="true">GoodSpaceHostel</p>
+      <p aria-hidden="true">GoodSpaceHostel</p>
+    </div>
+  
+    <div aria-hidden="true" class="marquee__group">
+      <p>GoodSpaceHostel</p>
+      <p>GoodSpaceHostel</p>
+      <p>GoodSpaceHostel</p>
+    </div>
+  </div>
+  
+  <div class="marquee marquee--reverse">
+    <div class="marquee__group">
+        <img src='https://lh3.googleusercontent.com/p/AF1QipOa7etsqfvB76H8VTeHwhehTu2Nv0V95mljXJ64=s1360-w1360-h1020' alt=''>
+        <img src='https://lh3.googleusercontent.com/p/AF1QipO6DKmwdgmaN6TIyewf4mEA_E4jlL3Yv1aNhtSE=s1360-w1360-h1020' alt=''>
+        <img src='https://lh3.googleusercontent.com/p/AF1QipMARM4faOJ0J5z4h68aStz6UHYEg029lurFosTQ=s1360-w1360-h1020' alt=''>
+        <img src='https://lh3.googleusercontent.com/p/AF1QipOFVNyMDFhmi4abmCzO1Zl9YFiqOJi1MLIIBz1W=s1360-w1360-h1020' alt=''>
+        <img src='https://lh3.googleusercontent.com/p/AF1QipMYATmNnnX5BsepQ29U23kPXAt2hanrnhw8vV0P=s1360-w1360-h1020' alt=''>
+    </div>
+  
+    <div aria-hidden="true" class="marquee__group">
+        <img src='https://lh3.googleusercontent.com/p/AF1QipMz5X7R8ktJfepEodkPK1gF2Ax_Us26B7fbq99_=s1360-w1360-h1020' alt=''>
+        <img src='https://lh3.googleusercontent.com/p/AF1QipO88EoGn-TJ8vJxeFgYjLTdvUz9thnunrl3XLMi=s1360-w1360-h1020' alt=''>
+        <img src='https://lh3.googleusercontent.com/p/AF1QipOrcd4fLg01AkeKYfVHTKnT3UTyQmPXH78AOgdL=s1360-w1360-h1020' alt=''>
+        <img src='https://lh3.googleusercontent.com/p/AF1QipMWtCHPCqUswIl_BcfCZzDWGkH8mlrlZxGPDsE7=s1360-w1360-h1020' alt=''>
+        <img src='https://lh3.googleusercontent.com/p/AF1QipNPcxmt-sC3wKto_bsht8ZvGz_jvfC7LaYcKng8=s1360-w1360-h1020' alt=''>
+    </div>
+  </div>
+</section>
+<section class="testimonial-section">
+    <div class="subheading">- Check us out - </div>
+    <h2>Testimonials</h2>
+    <div class="testimonial-container">
+        <!-- Testimonial Card 1 -->
+        <div class="testimonial-card">
+            <img class="profile-image" src="https://lh3.googleusercontent.com/a/ACg8ocKL5myK8KdjX71Y7ykEsjPpqfD0z33eWDuhyMtBwtczAvvOAQ=s40-c-rp-mo-br100" alt="Profile Image">
+            <h3>Lucky Dasalaniya</h3>
+            <div class="rating">
+                ★★★★★ <!-- Replace with actual star rating -->
+            </div>
+            <p>Best hostel  and best facilities
+                Free electricity
+                Free laundry
+                4-time meal
+                Swimming pool wow
+                All the basic needs are given by owner
+                One of the best affordable pg near Manipal University Jaipur.</p>
+        </div>
+
+        <!-- Testimonial Card 2 -->
+        <div class="testimonial-card">
+            <img class="profile-image" src="https://lh3.googleusercontent.com/a-/ALV-UjXBguUiN9eRLrOdB40N3VleXkts3nEKafwYyBcBv3cA52YUcaOx=s40-c-rp-mo-br100" alt="Profile Image">
+            <h3>Mansoor Dairkee</h3>
+            <div class="rating">
+                ★★★★☆ <!-- Replace with actual star rating -->
+            </div>
+            <p>"Good Space Boys Hostel" offers clean, spacious rooms, reliable Wi-Fi, and well-maintained common areas, making it a comfortable living option. The staff is friendly and responsive, ensuring residents' needs are met promptly. The hostel provides a good meal plan and maintains high cleanliness standards. Security is robust, and the location is convenient.</p>
+        </div>
+
+        <!-- Testimonial Card 3 -->
+        <div class="testimonial-card">
+            <img class="profile-image" src="https://lh3.googleusercontent.com/a/ACg8ocIAbgZIOagEMYG8ig69WKKPMnwARLJNvibSlrsnGCSzjpyLbA=s40-c-rp-mo-br100" alt="Profile Image">
+            <h3>Lokesh Choudhary</h3>
+            <div class="rating">
+                ★★★★★ <!-- Replace with actual star rating -->
+            </div>
+            <p>This is the best PG I have ever seen in this area.
+                If you are looking for a PG that provides a calm and peaceful place with the best facilities, then this one is a perfect choice for you or your loved ones.
+                In my opinion, this is the best choice in this area, and I'm giving it a 5-star rating. 😊</p>
+        </div>
+    </div>
+</section>
+
+
+<section class="contact-section" id ="contact">
+    <div class="subheading">- Connection -</div>
+    <h2>Contact Us</h2>
+    <div class="contact-content">
+     <!-- Left Subsection: Contact Info -->
+<div class="contact-subsection text-center md:text-left">
+    <!-- Center the SVG and other content for mobile view -->
+    <div class="flex justify-center md:justify-start mb-4">
+        <svg fill="#ffffff" width="105px" height="105px" viewBox="-8.32 -8.32 48.64 48.64" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff" class="mx-auto md:mx-0">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <path d="M16.114-0.011c-6.559 0-12.114 5.587-12.114 12.204 0 6.93 6.439 14.017 10.77 18.998 0.017 0.020 0.717 0.797 1.579 0.797h0.076c0.863 0 1.558-0.777 1.575-0.797 4.064-4.672 10-12.377 10-18.998 0-6.618-4.333-12.204-11.886-12.204zM16.515 29.849c-0.035 0.035-0.086 0.074-0.131 0.107-0.046-0.032-0.096-0.072-0.133-0.107l-0.523-0.602c-4.106-4.71-9.729-11.161-9.729-17.055 0-5.532 4.632-10.205 10.114-10.205 6.829 0 9.886 5.125 9.886 10.205 0 4.474-3.192 10.416-9.485 17.657zM16.035 6.044c-3.313 0-6 2.686-6 6s2.687 6 6 6 6-2.687 6-6-2.686-6-6-6zM16.035 16.044c-2.206 0-4.046-1.838-4.046-4.044s1.794-4 4-4c2.207 0 4 1.794 4 4 0.001 2.206-1.747 4.044-3.954 4.044z"></path>
+            </g>
+        </svg>
+    </div>
+    <h3 class="text-xl md:text-2xl font-semibold">Contact Details</h3>
+    <p><strong>Registered Office:</strong> Good Space Hostels<br>Tejaswi Greens, Manipal University Jaipur, Jaipur, Rajasthan.</p>
+    <p><strong>General Enquiries:</strong></p>
+    <p><strong>Phone:</strong> +91 9351946685</p>
+    <p><strong>Email:</strong> rahulchoudhary25788@gmail.com</p>
+    <p><strong>Owner:</strong> Rahul Choudhary</p>
+</div>
+
+        <!-- Right Subsection: Google Maps Location -->
+        <div class="contact-subsection">
+            <h3>Google Maps Location</h3>
+            <div class="map-container">
+                <!-- Replace with your Google Maps iframe embed code -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14239.225126314996!2d75.5702973!3d26.8461131!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396c491ec4e96ac9%3A0x5da94beb30143478!2sGood%20Space%20Boys%20Hostel!5e0!3m2!1sen!2sin!4v1722268298459!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="relative bg-cover bg-center text-white" style="background-image: url('https://lh3.googleusercontent.com/p/AF1QipMARM4faOJ0J5z4h68aStz6UHYEg029lurFosTQ=s1360-w1360-h1020');">
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <div class="relative container mx-auto p-6 flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start space-y-6 md:space-y-0">
+        <!-- Left Section -->
+        <div class="footer-left flex flex-col space-y-4 md:space-y-6 items-center md:items-start">
+            <h2 class="text-3xl md:text-4xl font-bold text-tangy-orange">GoodSpaceHostel</h2>
+            <p class="text-lg md:text-xl text-center md:text-left">Your comfort is our priority. Experience a cozy stay with us.</p>
+            <div class="flex items-center space-x-4">
+                <span class="text-lg">Follow Us:</span>
+                <a href="#" class="text-white hover:text-gray-300">
+                    <img src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-1024.png" alt="Facebook" class="w-6 h-6 md:w-8 md:h-8">
+                </a>
+                <a href="#" class="text-white hover:text-gray-300">
+                    <img src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-1024.png" alt="Instagram" class="w-6 h-6 md:w-8 md:h-8">
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Section -->
+        <div class="footer-right space-y-4 md:space-y-6 items-center md:items-start">
+            <h3 class="text-lg md:text-xl font-semibold">Quick Links</h3>
+            <ul class="space-y-2">
+                <li class="flex items-center text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+                        <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+                    </svg>
+                    <a href="#home" class="hover:text-gray-300">Home</a>
+                </li>
+                <li class="flex items-center text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M3 12h1m8 -9v1m8 8h1m-15.4 -6.4l.7 .7m12.1 -.7l-.7 .7" />
+                        <path d="M9 16a5 5 0 1 1 6 0a3.5 3.5 0 0 0 -1 3a2 2 0 0 1 -4 0a3.5 3.5 0 0 0 -1 -3" />
+                        <path d="M9.7 17l4.6 0" />
+                    </svg>
+                    <a href="#amenities" class="hover:text-gray-300">Amenities</a>
+                </li>
+                <li class="flex items-center text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M9 21v-6a2 2 0 0 1 2 -2h2c.641 0 1.212 .302 1.578 .771" />
+                        <path d="M20.136 11.136l-8.136 -8.136l-9 9h2v7a2 2 0 0 0 2 2h6.344" />
+                        <path d="M19 22v-6" />
+                        <path d="M22 19l-3 -3l-3 3" />
+                    </svg>
+                    <a href="#rooms" class="hover:text-gray-300">Rooms</a>
+                </li>
+                <li class="flex items-center text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M15 8h.01" />
+                        <path d="M6 13l2.644 -2.644a1.21 1.21 0 0 1 1.712 0l3.644 3.644" />
+                        <path d="M13 13l1.644 -1.644a1.21 1.21 0 0 1 1.712 0l1.644 1.644" />
+                        <path d="M4 8v-2a2 2 0 0 1 2 -2h2" />
+                        <path d="M4 16v2a2 2 0 0 0 2 2h2" />
+                        <path d="M16 4h2a2 2 0 0 1 2 2v2" />
+                        <path d="M16 20h2a2 2 0 0 0 2 -2v-2" />
+                    </svg>
+                    <a href="#gallery" class="hover:text-gray-300">Gallery</a>
+                </li>
+                <li class="flex items-center text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 mr-2">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                        <path d="M20 6v12a2 2 0 0 1 -2 2h-10a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h10a2 2 0 0 1 2 2z" />
+                        <path d="M10 16h6" />
+                        <path d="M13 11m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                        <path d="M4 8h3" />
+                        <path d="M4 12h3" />
+                        <path d="M4 16h3" />
+                    </svg>
+                    <a href="#contact" class="hover:text-gray-300">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- Optional JavaScript -->
+    <script>
+   document.addEventListener('DOMContentLoaded', function () {
+    const hamburgerMenu = document.getElementById('hamburger-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+    const cancelButton = document.getElementById('cancel-button');
+
+    hamburgerMenu.addEventListener('click', function () {
+        mobileMenu.classList.add('active');
+    });
+
+    closeMenu.addEventListener('click', function () {
+        mobileMenu.classList.remove('active');
+    });
+
+    cancelButton.addEventListener('click', function (event) {
+        event.preventDefault();
+        mobileMenu.classList.remove('active');
+    });
+});
+
+
+        document.addEventListener('DOMContentLoaded', function () {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.dot');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    if (i === index) {
+                        slide.classList.add('active');
+                    } else {
+                        slide.classList.remove('active');
+                    }
+                });
+                updateDots(index);
+            }
+
+            function updateDots(index) {
+                dots.forEach((dot, i) => {
+                    if (i === index) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            setInterval(nextSlide, 6000); // Change slide every 6 seconds
+
+            dots.forEach((dot, i) => {
+                dot.addEventListener('click', () => {
+                    showSlide(i);
+                    currentSlide = i;
+                });
+            });
+        });
+
+
+    </script>
+</body>
+
+</html>
